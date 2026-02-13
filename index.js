@@ -24,7 +24,7 @@ const images = [
   "images/cat_crying/cat-crying.gif",
   "images/cat_crying/crycat-crying-cat.gif",
   "images/cat_crying/giphy.gif",
-  "images/cat_crying/tenor (1).gif",
+  "images/cat_crying/tenor2.gif",
   "images/cat_crying/tenor.gif"
 ];
 let imageIndex = 0;
