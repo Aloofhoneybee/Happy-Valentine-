@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="icon" href="images/heart.svg" type="image/x-icon">
+    <link rel="stylesheet" href="src/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Custom animation for floating hearts if we add them later */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-br from-pink-100 to-red-100 min-h-screen flex flex-col items-center justify-center overflow-hidden relative">
+
+    <!-- Background Elements -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
+        <div class="absolute top-10 left-10 text-pink-300 text-6xl opacity-50 animate-pulse">♥</div>
+        <div class="absolute bottom-20 right-20 text-red-300 text-8xl opacity-40 animate-bounce">♥</div>
+        <div class="absolute top-1/2 left-1/4 text-pink-200 text-4xl opacity-60">♥</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="text-center z-10 px-4">
+        <h1 class="text-5xl md:text-7xl font-pacifico text-red-500 mb-8 drop-shadow-sm transition-transform duration-300 hover:scale-105"
+            id="main-text">
+            Will You Be My Valentine? 🥺
+        </h1>
+
+        <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8">
+            <img src="try.gif" alt="Cute happy animation"
+                class="w-full h-full object-cover rounded-full " id="main-image">
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-8">
+            <button id="yes-btn"
+                class="px-10 py-4 bg-red-500 text-white text-xl font-bold rounded-full shadow-lg hover:bg-red-600 transform hover:scale-110 transition-all duration-300 focus:outline-none ring-4 ring-red-200">
+                Yes! 💖
+            </button>
+            <button id="no-btn"
+                class="px-10 py-4 bg-gray-300 text-gray-700 text-xl font-bold rounded-full shadow-lg hover:bg-gray-400 transform hover:scale-110 transition-all duration-300 focus:outline-none ring-4 ring-gray-200">
+                No 😢
+            </button>
+        </div>
+    </div>
+
+    <!-- 'No' Modal (Hidden by default) -->
+    <div id="no-modal"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-sm text-center transform scale-90 transition-transform duration-300"
+            id="modal-content">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 font-pacifico">I'm crying...</h2>
+            <img src="images/cat_crying/5228_cat_cri.gif" alt="Crying Cat" class="w-full rounded-xl mb-6 shadow-md">
+            <div class="flex gap-4 justify-center">
+                <button id="modal-yes-btn"
+                    class="flex-1 px-6 py-3 bg-red-500 text-white font-bold rounded-full hover:bg-red-600 transition-colors">
+                    Okay Yes! 🥺
+                </button>
+                <button id="modal-close-btn"
+                    class="flex-1 px-6 py-3 bg-gray-200 text-gray-700 font-bold rounded-full hover:bg-gray-300 transition-colors">
+                    Still No 😭
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Overlay (Hidden by default) -->
+    <div id="celebration"
+        class="fixed inset-0 bg-pink-500/90 hidden items-center justify-center z-50 flex-col text-white text-center">
+        <h1 class="text-6xl md:text-8xl font-pacifico mb-8 animate-bounce">YAAAY!!! 🎉</h1>
+        <p class="text-2xl md:text-3xl font-light mb-8">You made me the happiest person!</p>
+        <img src="happy1.gif" alt="Happy Celebration"
+            class="w-64 h-64 rounded-full border-8 border-white shadow-2xl mb-8">
+        <button onclick="location.reload()"
+            class="mt-8 px-8 py-3 bg-white text-pink-500 font-bold rounded-full hover:bg-pink-100 transition-colors">
+            Replay ❤️
+        </button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
